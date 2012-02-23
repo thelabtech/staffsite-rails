@@ -1,0 +1,10 @@
+<div id='logo'>
+  <%= link_to Refinery::Core.site_name, refinery.root_path %>
+</div>
+
+<%= render(:partial => "/refinery/menu", :locals => {
+             :dom_id => 'menu',
+             :css => 'menu'
+           }) %>
+
+<div class="clr"></div>

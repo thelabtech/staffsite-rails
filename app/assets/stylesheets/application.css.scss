@@ -1,0 +1,246 @@
+@import url('refinery/application.css');
+@import url('font/stylesheet.css');
+@import url('refinery/application.css');
+
+$white: #fff;
+$blue: #2f6b7f;
+$pagewidth: 960px;
+$radius: 8px;
+
+body {
+  background: $white;
+  font-family: Arial;
+  font-size: 12px;
+  line-height: 18px;
+  margin: 0;
+}
+
+p {
+  line-height: 1.55em;
+}
+
+h1, h2, h3, h4, h5, h6 {color: $blue; line-height: 1.15em; margin: 0; font-family: 'LatoBold';}
+
+h3 {font-size: 15px; font-family: 'LatoBold'; letter-spacing: -1px; line-height: 1.45em;}
+
+#header,
+#page_interior,
+#welcome{
+  margin: 0 auto;
+  width: $pagewidth;
+}
+
+#header {
+  border: 1px solid $white;
+  background: #fff;
+  height: 95px;
+}
+
+#logo {
+  float: left;
+  margin-top: 20px;
+  margin-left: 28px;
+  a {
+    background: url("/images/logo.png") no-repeat;
+    width: 88px;
+    height: 56px;
+    overflow: hidden;
+    text-indent: -1000px;
+    display: block;
+  }
+}
+
+#menu {
+  float: right;
+  margin-top: 35px;
+  margin-right: 28px;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      
+      font-size: 14px;
+      border-right: 1px solid silver;
+      line-height: 22px;
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+    }
+    li:last-child {
+      border: none;
+    }
+  }
+}
+
+#menu ul li a {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: $blue;
+}
+
+#menu ul li.selected a, #menu ul li a:hover {
+  background: none;
+}
+
+.clr {
+  clear: both;
+}
+
+#welcome {
+  font-family: 'LatoBlack';
+  font-size: 60px;
+  display: block;
+  line-height: 1em;
+  padding-top: 25px;
+  color: $white;
+  text-indent: 28px;
+  text-shadow: rgba(36,142,166,.69) 0 2px 2px;
+  .smaller {
+    font-size: 30px;
+  }
+}
+
+.meta {
+  color: $blue;
+  font-family: 'LatoRegular';
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+#hero {
+  padding-top: 36px;
+  h2 {
+    font-size: 32px;
+  }
+  .image {
+    float: left;
+    border: 2px solid $white;
+    box-shadow: #999 0 0 7px;
+    background: silver;
+    display: block;
+    width: 440px;
+    height: 320px;
+    margin-left: 36px;
+  }
+  .story {
+    margin-left: 520px;
+    margin-right: 36px;
+  }
+}
+
+#nothero {
+  background: #ebebeb;
+  padding: 46px 42px;
+  margin-top: 36px;
+  article {
+    width: 245px;
+    float: left;
+    margin-right: 70px;
+  }
+  article:nth-child(3) {
+    margin-right: 0px;
+  }
+  .content {
+    height: 90px;
+  }
+  .readmore {
+    background: #000;
+    border-radius: $radius;
+    a {
+      color: $white;
+      line-height: 28px;
+      display: block;
+      text-decoration: none;
+      padding: 0 10px;
+      background: url("/images/arrow.png") no-repeat 99% -32px;
+    }
+  }
+  .image {
+    margin-bottom: 15px;
+    min-height: 110px;
+  }
+}
+
+.btn {
+  background: red;
+  box-shadow: inset rgba(0,0,0,.75) 0 0 10px;
+  border-radius: $radius;
+  line-height: 3em;
+  padding: 0 18px;
+  display: inline-block;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.btn:hover {box-shadow: inset rgba(0,0,0,.75) 0 -2px 10px;}
+.btn:active {box-shadow: inset rgba(0,0,0,.75) 0 2px 10px;}
+
+.btn.readmore {
+  background-color: #de7c19;
+}
+
+#page {
+  background: url("/images/bg.png") repeat-x;
+  min-height: 912px;
+  overflow: hidden;
+}
+
+#page_interior {
+  border-radius: $radius $radius 0 0;
+  background: #fff;
+  box-shadow: rgba(0,0,0,.43) 0 0 9px;
+  overflow: hidden;
+}
+
+#body_content, #side_body_content {
+  float: left;
+  width: 45%;
+  color: #333;
+  padding: 20px;
+}
+
+@mixin inner {
+  min-height: 200px;
+  margin: 0 auto;
+  width: $pagewidth;
+}
+
+#toolbox {
+  background: #262626;
+  border-top: 1px solid #999;
+  .inner {@include inner;}
+}
+
+.exp {
+  margin-top:30px;
+  background: #151515;
+  box-shadow: inset rgba(0,0,0,.89) 0 0 13px, #000 0 0 8px;
+  min-height: 90px;
+  border-radius: $radius;
+  border-bottom: 1px solid #353535;
+}
+
+.expandbtn {
+  background: url("/images/plus.png") no-repeat;
+  width: 39px;
+  height: 39px;
+  margin: -19px;
+  display: block;
+  position: absolute;
+}
+
+footer {
+  background: #101010;
+  box-shadow: 0 0 8px #000;
+  border-top: 1px solid #3d3d3d;
+  position: absolute;
+  width: 100%;
+  color: #878787;
+  text-align: center;
+  .inner {@include inner;}
+}
