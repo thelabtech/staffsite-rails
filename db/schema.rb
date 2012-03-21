@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120320221353) do
+ActiveRecord::Schema.define(:version => 20120321180872) do
 
   create_table "academic_departments", :force => true do |t|
     t.string "name"
@@ -599,6 +599,17 @@ ActiveRecord::Schema.define(:version => 20120320221353) do
     t.string   "university_state"
     t.string   "year_in_school"
   end
+
+  create_table "crs2_phone_numbers", :force => true do |t|
+    t.string   "number"
+    t.integer  "person_id"
+    t.string   "location"
+    t.boolean  "primary",    :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "crs2_phone_numbers", ["person_id"], :name => "index_crs2_phone_numbers_on_person_id"
 
   create_table "crs2_profile", :force => true do |t|
     t.string   "type",               :limit => 31, :default => "", :null => false
@@ -5253,58 +5264,6 @@ ActiveRecord::Schema.define(:version => 20120320221353) do
   add_index "received_sms", ["phone_number", "message", "received_at"], :name => "index_received_sms_on_phone_number_and_message_and_received_at", :unique => true
   add_index "received_sms", ["twilio_sid"], :name => "index_received_sms_on_twilio_sid", :unique => true
 
-  create_table "refinery_blog_categories", :force => true do |t|
-    t.string   "title"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.string   "cached_slug"
-    t.string   "slug"
-  end
-
-  add_index "refinery_blog_categories", ["id"], :name => "index_refinery_blog_categories_on_id"
-  add_index "refinery_blog_categories", ["slug"], :name => "index_refinery_blog_categories_on_slug"
-
-  create_table "refinery_blog_categories_blog_posts", :force => true do |t|
-    t.integer "blog_category_id"
-    t.integer "blog_post_id"
-  end
-
-  add_index "refinery_blog_categories_blog_posts", ["blog_category_id", "blog_post_id"], :name => "index_blog_categories_blog_posts_on_bc_and_bp"
-
-  create_table "refinery_blog_comments", :force => true do |t|
-    t.integer  "blog_post_id"
-    t.boolean  "spam"
-    t.string   "name"
-    t.string   "email"
-    t.text     "body"
-    t.string   "state"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
-  add_index "refinery_blog_comments", ["id"], :name => "index_refinery_blog_comments_on_id"
-
-  create_table "refinery_blog_posts", :force => true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.boolean  "draft"
-    t.datetime "published_at"
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
-    t.integer  "user_id"
-    t.string   "cached_slug"
-    t.string   "custom_url"
-    t.text     "custom_teaser"
-    t.string   "source_url"
-    t.string   "source_url_title"
-    t.integer  "access_count",     :default => 0
-    t.string   "slug"
-  end
-
-  add_index "refinery_blog_posts", ["access_count"], :name => "index_refinery_blog_posts_on_access_count"
-  add_index "refinery_blog_posts", ["id"], :name => "index_refinery_blog_posts_on_id"
-  add_index "refinery_blog_posts", ["slug"], :name => "index_refinery_blog_posts_on_slug"
-
   create_table "refinery_images", :force => true do |t|
     t.string   "image_mime_type"
     t.string   "image_name"
@@ -5316,6 +5275,33 @@ ActiveRecord::Schema.define(:version => 20120320221353) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
+
+  create_table "refinery_news_item_translations", :force => true do |t|
+    t.integer  "refinery_news_item_id"
+    t.string   "locale"
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+    t.string   "source"
+  end
+
+  add_index "refinery_news_item_translations", ["locale"], :name => "index_refinery_news_item_translations_on_locale"
+  add_index "refinery_news_item_translations", ["refinery_news_item_id"], :name => "index_2fe5614a8b4e9a5c34c0f93f230e423e36d53bda"
+
+  create_table "refinery_news_items", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "publish_date"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.integer  "image_id"
+    t.datetime "expiration_date"
+    t.string   "source"
+    t.string   "slug"
+  end
+
+  add_index "refinery_news_items", ["id"], :name => "index_refinery_news_items_on_id"
 
   create_table "refinery_page_part_translations", :force => true do |t|
     t.integer  "refinery_page_part_id"
@@ -7310,23 +7296,6 @@ ActiveRecord::Schema.define(:version => 20120320221353) do
   end
 
   add_index "super_admins", ["user_id"], :name => "index_super_admins_on_user_id"
-
-  create_table "taggings", :force => true do |t|
-    t.integer  "tag_id"
-    t.integer  "taggable_id"
-    t.string   "taggable_type"
-    t.integer  "tagger_id"
-    t.string   "tagger_type"
-    t.string   "context"
-    t.datetime "created_at"
-  end
-
-  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
-  add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
-
-  create_table "tags", :force => true do |t|
-    t.string "name"
-  end
 
   create_table "teams", :force => true do |t|
     t.integer  "organization_id"

@@ -9,7 +9,7 @@ gem 'mysql2'
 
 gem 'refinerycms', '~> 2.0.0'
 gem 'refinerycms-i18n', '~> 2.0.0'
-gem 'refinerycms-blog', '~> 2.0.0'
+gem 'refinerycms-news', '~> 2.0.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
