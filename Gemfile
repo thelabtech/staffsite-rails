@@ -7,8 +7,9 @@ gem 'rails', '3.2.1'
 
 gem 'mysql2'
 
-gem 'refinerycms', :git => 'git://github.com/resolve/refinerycms.git'
-gem 'refinerycms-i18n', '~> 2.0.0', :git => 'git://github.com/parndt/refinerycms-i18n.git'
+gem 'refinerycms', '~> 2.0.0'
+gem 'refinerycms-i18n', '~> 2.0.0'
+gem 'refinerycms-blog', '~> 2.0.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -17,7 +18,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer'
+  gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
 end
