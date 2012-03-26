@@ -1,11 +1,14 @@
 <% news_item = @items.first %>
 <div id="page_interior">
   <div id="hero">
+    <div class="image">
+      <%= link_to(news_item.img.html_safe, refinery.news_item_path(news_item)) if news_item.img %>
+    </div>
     <div class="story">
       <h2><%= news_item.title %></h2>
       <div class="meta">Published on <%= news_item.publish_date.to_date.to_formatted_s(:long) %></div>
       <div class="content">
-        <%= truncate  news_item.body, :length => 500,
+        <%= truncate  news_item.body_without_img, :length => 500,
                       :omission => " ... #{link_to 'Read More', refinery.news_item_path(news_item), :class => 'btn readmore'}",
                       :preserve_html_tags => true %>
       </div>
@@ -17,11 +20,14 @@
     <% @items.each do |news_item| %>
       <% unless news_item == @items.first %>
         <article>
+          <div class="image">
+            <%= link_to(news_item.img.html_safe, refinery.news_item_path(news_item)) if news_item.img %>
+          </div>
           <div class="story">
             <h3><%= news_item.title %></h3>
             <div class="meta">Published on <%= news_item.publish_date.to_date.to_formatted_s(:long) %></div>
             <div class="content">
-              <%= truncate  news_item.body, :length => 200,
+              <%= truncate  news_item.body_without_img, :length => 200,
                             :omission => " ... ",
                             :preserve_html_tags => true %>
             </div>
