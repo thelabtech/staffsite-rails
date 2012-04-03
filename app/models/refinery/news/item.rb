@@ -28,13 +28,17 @@ module Refinery
         self.class.previous(self).first
       end
       
+      def img_minus_width
+        img.gsub(/ width.+"/, "") if img_orig
+      end
+      
       def img
         body[/<img.+\/>/] if body
       end
       
       def body_without_img
         if img
-          body.gsub(img, "").gsub("<p></p>", "").gsub("<p><br /></p>", "").strip if body
+          body.gsub(img, "").gsub("<p></p>", "").strip if body
         else
           body
         end

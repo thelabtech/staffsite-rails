@@ -56,5 +56,8 @@ module Staffsite
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
     config.assets.initialize_on_precompile = false
+    
+    config.rubycas.cas_base_url = "https://signin.ccci.org/cas"
+    config.rubycas.validate_url = "https://signin.ccci.org/cas/serviceValidate"
   end
 end

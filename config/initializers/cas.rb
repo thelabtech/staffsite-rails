@@ -1,0 +1,1 @@
+#Staffsite::Application.config.rubycas.cas_base_url = "https://signin.ccci.org/cas"
