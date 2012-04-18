@@ -2,7 +2,7 @@
 <%= render :partial => '/refinery/html_tag' %>
   <% site_bar = render(:partial => '/refinery/site_bar', :locals => {:head => true}) -%>
   <%= render :partial => '/refinery/head' %>
-  <body>
+  <body class="<%= controller.controller_name %> <%= controller.action_name %>" class="<%= controller.controller_name %>_<%= controller.action_name %>">
     <%= site_bar -%>
     <%= render :partial => '/refinery/ie6check' if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
     <div id="page_container">
