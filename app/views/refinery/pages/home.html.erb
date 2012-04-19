@@ -7,14 +7,53 @@ Hi Micah! <span class="smaller">Check this out...</span>
 
 <div id="toolbox">
   <div class="inner">
-    <div class="exp">
+    <div class="exp" id="logos">
+      <div class="ilogo"><%= link_to("LOGO", "") %></div>
+      <div class="ilogo"><%= link_to("LOGO", "") %></div>
+      <div class="ilogo"><%= link_to("LOGO", "") %></div>
+      <div class="ilogo"><%= link_to("LOGO", "") %></div>
+      <div class="ilogo"><%= link_to("LOGO", "") %></div>
+      <div class="ilogo"><%= link_to("LOGO", "") %></div>
+      <div class="ilogo"><%= link_to("LOGO", "") %></div>
+    </div>
+    <a class="expandbtn" href=""></a>
+    
+    <div class="exp" id="staffinfo">
+      
+      <table>
+        <Tr>
+          <td>
+      
+            <h3>My Staff Account Balance</h3>
+      
+            <label>Current:</label>
+            <span class="amount">$15,967.22</span>
+
+          </td>
+          <td>
+            
+            <h3>Infobase</h3>
+            <div class="fieldwrap">
+              <input type="text" />
+              <select>
+                <option>Location</option>
+              </select>
+            </div>
+            
+            <button>Enter Stats</button>
+          </td>
+        </tr>
+      </table>
       
     </div>
     <a class="expandbtn"></a>
     
-    <div class="exp">
-      
-    </div>
-    <a class="expandbtn"></a>
+    <script>
+        $(".expandbtn").click(function () {
+          $("#logos").slideToggle("slow");
+          return false;
+        });
+    </script>
+    
   </div>
 </div>

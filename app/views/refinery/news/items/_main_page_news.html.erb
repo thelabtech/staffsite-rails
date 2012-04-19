@@ -9,7 +9,7 @@
       <div class="meta">Published on <%= news_item.publish_date.to_date.to_formatted_s(:long) %></div>
       <div class="content">
         <%= truncate  news_item.body_without_img, :length => 500,
-                      :omission => " ... #{link_to 'Read More', refinery.news_item_path(news_item), :class => 'btn readmore'}",
+                      :omission => "... <div class=rbreak>#{link_to 'Read More', refinery.news_item_path(news_item), :class => 'btn readmore'}</div>",
                       :preserve_html_tags => true %>
       </div>
     </div>
@@ -27,7 +27,7 @@
             <h3><%= news_item.title %></h3>
             <div class="meta">Published on <%= news_item.publish_date.to_date.to_formatted_s(:long) %></div>
             <div class="content">
-              <%= truncate  news_item.body_without_img, :length => 200,
+              <%= truncate  news_item.body_without_img, :length => 130,
                             :omission => " ... ",
                             :preserve_html_tags => true %>
             </div>
