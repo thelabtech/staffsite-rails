@@ -181,6 +181,11 @@ a {color: #3099bc;}
       height: auto;
     }
   }
+  .story {
+    header {
+      height: 66px;
+    }
+  }
 }
 
 .btn {
@@ -426,6 +431,10 @@ ul.linkset {
   }
 }
 
+div.tabgroup {
+  margin-bottom: 50px;
+}
+
 div.tabbers {
   float: right;
   margin-right: 15px;
@@ -440,6 +449,11 @@ div.tabbers {
     text-decoration: none;
     margin-top: -1px;
     float: left;
+    border-top: 1px solid #353535;
+  }
+  .tab.active {
+    border: 1px solid #353535;
+    border-top: none;
   }
 }
 
