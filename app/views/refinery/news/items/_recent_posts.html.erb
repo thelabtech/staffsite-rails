@@ -1,9 +1,23 @@
 <nav id="recent_news_items">
   <h2><%= t('.recent_posts') %></h2>
-  <ul>
+  <ul class="nostyle recentposts">
     <% @items.each do |item| %>
       <li>
-        <%= link_to item.title, refinery.news_item_path(item) %>
+        <h3><%= link_to item.title, refinery.news_item_path(item) %></h3>
+        <div class="excerpt">
+          It's a shame how often email signatures are done poorly nowadays. Many people want their signature to reflect their personality, provide pertinent information and more, but they can easily go overboard.
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</nav>
+
+<nav id="recent_news_items">
+  <h2>Story Categories</h2>
+  <ul class="nostyle cats">
+    <% @items.each do |item| %>
+      <li>
+        <h4><%= link_to item.title, refinery.news_item_path(item) %></h4>
       </li>
     <% end %>
   </ul>

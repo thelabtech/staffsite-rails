@@ -230,6 +230,32 @@ a {color: #3099bc;}
 }
 
 /* ************************ */
+.nostyle {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  a {text-decoration: none;}
+}
+
+ul.recentposts {
+  padding: 15px 30px;
+  li {
+    border-bottom: 1px solid silver;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    .excerpt {line-height: 1.25em;}
+    h3 {margin-bottom: .5em;}
+  }
+}
+
+ul.cats {
+  padding: 15px 30px;
+  li {
+    margin-bottom: 8px;
+    h4 {margin-bottom: 0em; line-height: 1.25em; font-family: 'LatoRegular'}
+  }
+}
+
 .items {
   #body_content {
     margin: 0 auto;
