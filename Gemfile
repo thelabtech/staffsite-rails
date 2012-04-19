@@ -25,8 +25,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'rubycas-client', '2.2.1'
-gem 'rubycas-client-rails'
+gem 'rubycas-client', '2.3.8'
+#gem 'rubycas-client-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

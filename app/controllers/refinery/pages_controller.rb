@@ -1,6 +1,7 @@
 module Refinery
   class PagesController < ::ApplicationController
-    before_filter :find_page, :except => [:preview]
+    before_filter :find_page, :except => [:preview, :no_access]
+    skip_before_filter :ensure_staff, only: :no_access
 
     # Save whole Page after delivery
     after_filter { |c| c.write_cache? }
@@ -9,6 +10,10 @@ module Refinery
     def home
       @items = Refinery::News::Item.published.translated.limit(4)
       render_with_templates?
+    end
+
+    def no_access
+      render text: "Sorry, you don't have access to this website. If you think you should, please send an email to help@campuscrusadeforchrist.com"
     end
 
     # This action can be accessed normally, or as nested pages.

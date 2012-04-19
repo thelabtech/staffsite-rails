@@ -1,5 +1,5 @@
 <div id="welcome">
-Hi Micah! <span class="smaller">Check this out...</span>
+  Hi <%= current_person.firstName %>! <span class="smaller">Check this out...</span>
 </div>
 
 <%= render :partial => "/refinery/news/items/main_page_news" %>  
@@ -11,14 +11,14 @@ Hi Micah! <span class="smaller">Check this out...</span>
     <div class="tabgroup">
     
       <div class="exp" id="logos">
-        <div class="ilogo"><%= link_to(image_tag("/images/logo_missionhub.png"), "") %></div>
-        <div class="ilogo"><%= link_to(image_tag("/images/logo_staffweb.png"), "") %></div>
-        <div class="ilogo"><%= link_to(image_tag("/images/logo_panorama.png"), "") %></div>
-        <div class="ilogo"><%= link_to(image_tag("/images/logo_infobase.png"), "") %></div>
-        <div class="ilogo"><%= link_to(image_tag("/images/logo_wiki.png"), "") %></div>
-        <div class="ilogo"><%= link_to(image_tag("/images/logo_sp.png"), "") %></div>
-        <div class="ilogo"><%= link_to(image_tag("/images/logo_concur.png"), "") %></div>
-        <div class="ilogo"><%= link_to(image_tag("/images/logo_crupress.png"), "") %></div>      
+        <div class="ilogo"><%= link_to(image_tag("/images/logo_missionhub.png"), "https://www.missionhub.com", target: '_blank') %></div>
+        <div class="ilogo"><%= link_to(image_tag("/images/logo_staffweb.png"), "http://staff.ccci.org", target: '_blank') %></div>
+        <div class="ilogo"><%= link_to(image_tag("/images/logo_panorama.png"), "http://pr.uscm.org", target: '_blank') %></div>
+        <div class="ilogo"><%= link_to(image_tag("/images/logo_infobase.png"), "http://infobase.uscm.org", target: '_blank') %></div>
+        <div class="ilogo"><%= link_to(image_tag("/images/logo_wiki.png"), "http://wiki.uscm.org", target: '_blank') %></div>
+        <div class="ilogo"><%= link_to(image_tag("/images/logo_sp.png"), "https://sp.campuscrusadeforchrist.com", target: '_blank') %></div>
+        <div class="ilogo"><%= link_to(image_tag("/images/logo_concur.png"), "https://staffweb.ccci.org/ss/concurSamlAdapter", target: '_blank') %></div>
+        <div class="ilogo"><%= link_to(image_tag("/images/logo_crupress.png"), "http://crupress.campuscrusadeforchrist.com", target: '_blank') %></div>      
       </div>
     
       <div class="exp" id="links" style="display: none;">
@@ -101,8 +101,8 @@ Hi Micah! <span class="smaller">Check this out...</span>
       
       
       <div class="tabbers">
-        <a href="" class="tab">Tools</a>
-        <a href="" class="tab">Links</a>
+        <a href="#" onclick="$('#logos').show();$('#links').hide();$(this).addClass('active');$(this).next().removeClass('active');return false" class="tab active">Tools</a>
+        <a href="#" onclick="$('#logos').hide();$('#links').show();$(this).addClass('active');$(this).prev().removeClass('active');return false" class="tab">Links</a>
       </div>
       
       
@@ -122,20 +122,42 @@ Hi Micah! <span class="smaller">Check this out...</span>
       
             <div class="bfield">
             <label>Current:</label>
-            <span class="amount">$15,967.22</span>
+            <span class="amount"><%= number_to_currency(current_person.account_balance, precision: 0) %></span>
             </div>
           </td>
           <td>
             
             <h3>Infobase</h3>
             <div class="fieldwrap">
-              <input type="text" placeholder="Search..."/>
-              <select>
-                <option>Location</option>
-              </select>
+              <form action="" id="search_form" target="_blank">
+                <input type="text" placeholder="Search..." name="name"/>
+                <select name="type" id="search_type">
+                  <option value="person">Person</option>
+                  <option value="team">Team</option>
+                  <option value="location">Location</option>
+                </select>
+                <button>Go</button>
+              </form>
+              <script type="text/javascript" charset="utf-8">
+                $('#search_form').submit(function() {
+                    switch($('#search_type').val()) {
+                    case 'person':
+                      $(this).attr('action', 'https://infobase.uscm.org/people/search_results')
+                      break;
+                    case 'team':
+                      $(this).attr('action', 'https://infobase.uscm.org/teams/search_results')
+                      break;
+                    case 'location':
+                      $(this).attr('action', 'https://infobase.uscm.org/locations/search_results')
+                      break;
+                   }
+                })
+              </script>
             </div>
             <br/><br/>
-            <button>Enter Stats</button>
+            <form>
+              <button formaction="https://infobase.uscm.org/stats", formtarget="_blank">Enter Stats</button>
+            </form>
           </td>
         </tr>
       </table>

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <%= render :partial => '/refinery/html_tag' %>
   <% site_bar = render(:partial => '/refinery/site_bar', :locals => {:head => true}) -%>
+  <% content_for :stylesheets do %>
+    <%= javascript_include_tag('https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js') %>
+  <% end %>
   <%= render :partial => '/refinery/head' %>
   <body class="<%= controller.controller_name %> <%= controller.action_name %>" class="<%= controller.controller_name %>_<%= controller.action_name %>">
     <%= site_bar -%>

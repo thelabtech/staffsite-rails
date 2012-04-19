@@ -38,7 +38,7 @@ module Refinery
       
       def body_without_img
         if img
-          body.gsub(img, "").gsub("<p></p>", "").strip if body
+          body.gsub(img, "").gsub(/<p>|<\/p>|<br>|<br \/>/, "").strip if body
         else
           body
         end
