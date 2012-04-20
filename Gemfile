@@ -26,6 +26,7 @@ end
 
 gem 'jquery-rails'
 gem 'rubycas-client', '2.3.8'
+gem 'fog'
 #gem 'rubycas-client-rails'
 
 # To use ActiveModel has_secure_password

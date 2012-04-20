@@ -70,6 +70,6 @@ Staffsite::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   ENV['S3_KEY']='0MZHF18QSJRVZT04JXR2'
   ENV['S3_SECRET']='oo0rEg6qtdh/v2+gHytdwZTCzT5RsNFxC7IkBDhN'
-  ENV['S3_BUCKET']='staff.campuscrusadeforchrist.com'
+  ENV['S3_BUCKET']='staff.int.campuscrusadeforchrist.com'
 
 end
