@@ -3,6 +3,20 @@ module Refinery
     class Item < Refinery::Core::BaseModel
       extend FriendlyId
 
+      #=========== Additions ===============
+      belongs_to :image, autosave: true
+
+      def image_file=(file)
+        i = image || build_image
+        i.image = file
+      end
+
+      def video_url=(url)
+        self[:video_url] = url
+        image_file = nil
+      end
+      #=========== End Additions ===========
+
       translates :title, :body
 
       attr_accessor :locale # to hold temporarily
@@ -26,22 +40,6 @@ module Refinery
 
       def prev
         self.class.previous(self).first
-      end
-      
-      def img_minus_width
-        img.gsub(/ width.+"/, "") if img_orig
-      end
-      
-      def img
-        body[/<img.+\/>/] if body
-      end
-      
-      def body_without_img
-        if img
-          body.gsub(img, "").gsub(/<p>|<\/p>|<br>|<br \/>/, "").strip if body
-        else
-          body
-        end
       end
 
       class << self

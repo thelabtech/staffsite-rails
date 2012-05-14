@@ -2,13 +2,21 @@
 <div id="page_interior">
   <div id="hero">
     <div class="image">
-      <%= link_to(news_item.img.html_safe, refinery.news_item_path(news_item)) if news_item.img %>
+      <% if news_item.image %>
+        <%= link_to(image_tag(news_item.image.url), refinery.news_item_path(news_item))  %>
+      <% else %>
+        <video id="<%= dom_id(news_item) %>_video" class="video-js vjs-default-skin" controls
+          preload="auto" width="440" height="320" poster="<%= news_item.video_poster_frame %>"
+          data-setup="{}">
+          <source src="<%= news_item.video_url %>" type='video/mp4'>
+        </video>
+      <% end %>
     </div>
     <div class="story">
       <h2><%= news_item.title %></h2>
       <div class="meta">Published on <%= news_item.publish_date.to_date.to_formatted_s(:long) %></div>
       <div class="content">
-        <%= truncate  news_item.body_without_img, :length => 500,
+        <%= truncate  Sanitize.clean(news_item.body), :length => 500,
                       :omission => "... <div class=rbreak>#{link_to 'Read More', refinery.news_item_path(news_item), :class => 'btn readmore'}</div>",
                       :preserve_html_tags => true %>
       </div>
@@ -21,7 +29,11 @@
       <% unless news_item == @items.first %>
         <article>
           <div class="image">
-            <%= link_to(news_item.img.html_safe, refinery.news_item_path(news_item)) if news_item.img %>
+            <% if news_item.image %>
+              <%= link_to(image_tag(news_item.image.url), refinery.news_item_path(news_item))  %>
+            <% else %>
+              <%= link_to(image_tag(news_item.video_poster_frame), refinery.news_item_path(news_item))  %>
+            <% end %>
           </div>
           <div class="story">
             <header>
@@ -29,7 +41,7 @@
               <div class="meta">Published on <%= news_item.publish_date.to_date.to_formatted_s(:long) %></div>
             </header>
             <div class="content">
-              <%= truncate  news_item.body_without_img, :length => 130,
+              <%= truncate  Sanitize.clean(news_item.body), :length => 130,
                             :omission => " ... ",
                             :preserve_html_tags => true %>
             </div>

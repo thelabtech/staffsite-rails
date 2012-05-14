@@ -25,6 +25,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'sanitize'
 gem 'rubycas-client', '2.3.8'
 gem 'fog'
 #gem 'rubycas-client-rails'
