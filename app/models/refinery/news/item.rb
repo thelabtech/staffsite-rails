@@ -73,7 +73,7 @@ module Refinery
           not_expired.where("publish_date < ?", Time.now)
         end
 
-        def latest(limit = 10)
+        def latest(limit = 5)
           published.limit(limit)
         end
 
