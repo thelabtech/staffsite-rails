@@ -10,7 +10,7 @@ gem 'dalli'
 
 gem 'refinerycms', '~> 2.0.0'
 gem 'refinerycms-i18n', '~> 2.0.0'
-gem 'refinerycms-news', '~> 2.0.0'
+gem 'refinerycms-news', git: 'git://github.com/26am/refinerycms-news.git', branch: '2-0-stable'
 
 # Gems used only for assets and not required
 # in production environments by default.
