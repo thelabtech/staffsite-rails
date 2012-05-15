@@ -18,7 +18,9 @@
         <div class="ilogo"><%= link_to(image_tag("/images/logo_wiki.png"), "http://wiki.uscm.org", target: '_blank') %></div>
         <div class="ilogo"><%= link_to(image_tag("/images/logo_sp.png"), "https://sp.campuscrusadeforchrist.com", target: '_blank') %></div>
         <div class="ilogo"><%= link_to(image_tag("/images/logo_concur.png"), "https://staffweb.ccci.org/ss/concurSamlAdapter", target: '_blank') %></div>
-        <div class="ilogo"><%= link_to(image_tag("/images/logo_crupress.png"), "http://crupress.campuscrusadeforchrist.com", target: '_blank') %></div>      
+        <div class="ilogo"><%= link_to(image_tag("/images/logo_crupressn.png"), "http://crupress.campuscrusadeforchrist.com", target: '_blank') %></div>
+        <div class="ilogo"><%= link_to(image_tag("/images/logo_everystudent.png"), "http://www.everystudent.info", target: '_blank') %></div>     
+        <div class="ilogo"><%= link_to(image_tag("/images/logo_outlook.png"), "https://mail.ccci.org/exchweb/bin/auth/owalogon.asp?url=https://mail.ccci.org/exchange&reason=0&replaceCurrent=1", target: '_blank') %></div>   
       </div>
     
       <div class="exp" id="links" style="display: none;">
@@ -118,12 +120,26 @@
         <Tr>
           <td>
       
-            <h3>My Staff Account Balance</h3>
+            <h3>Notifications</h3>
       
-            <div class="bfield">
-            <label>Current:</label>
-            <span class="amount"><%= number_to_currency(current_person.account_balance, precision: 0) %></span>
-            </div>
+            <ul class="notifications listclean">
+              <li><%= link_to("") do %><span class="num">2</span> SP applications need review<% end %></li>
+              <li><%= link_to("") do %><span class="num">4</span> Stint applications need review<% end %></li>
+              <li><%= link_to("") do %><span class="num">1</span> Peer Review is waiting<% end %></li>
+            </ul>
+              
+          </td>
+          
+          <td>
+      
+            <h3>Missional Teams</h3>
+      
+            <ul class="teams listclean">
+              <li><%= link_to("") do %>PSW Northern Region<% end %></li>
+              <li><%= link_to("") do %>Bridges UCF<% end %></li>
+              <li><%= link_to("", class: "smallbtn") do %>Join a team<% end %></li>
+            </ul>
+              
           </td>
           <td>
             
@@ -136,7 +152,7 @@
                   <option value="team">Team</option>
                   <option value="location">Location</option>
                 </select>
-                <button>Go</button>
+                <button class="go">Go</button>
               </form>
               <script type="text/javascript" charset="utf-8">
                 $('#search_form').submit(function() {

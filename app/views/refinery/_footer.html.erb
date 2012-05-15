@@ -1,6 +1,14 @@
 <div class="inner">
-  <p>
-    <%= t('.copyright', :year => Time.now.year,
-                        :site_name => Refinery::Core.site_name) %>
-  </p>
+  <div class="left">
+    <p>
+      <%= link_to("Help Request", "https://staff.campuscrusadeforchrist.com/general/feedback.jsp", class: "help") %>
+    </p>
+  </div>
+  <div class="right">
+    <p>
+      <%= t('.copyright', :year => Time.now.year,
+                          :site_name => Refinery::Core.site_name) %>
+    </p>
+  </div>
+  
 </div>

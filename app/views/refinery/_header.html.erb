@@ -2,6 +2,10 @@
   <%= link_to Refinery::Core.site_name, refinery.root_path %>
 </div>
 
+<div id="topsearch">
+  <input type="text" name="s" id="s" placeholder="Enter Keywords"/>
+</div>
+
 <%= render(:partial => "/refinery/menu", :locals => {
              :dom_id => 'menu',
              :css => 'menu'
