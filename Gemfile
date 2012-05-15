@@ -8,9 +8,13 @@ gem 'rails', '~> 3.2.1'
 gem 'mysql2'
 gem 'dalli'
 
-gem 'refinerycms', '~> 2.0.0'
-gem 'refinerycms-i18n', '~> 2.0.0'
-gem 'refinerycms-news', git: 'git://github.com/26am/refinerycms-news.git', branch: '2-0-stable'
+#gem 'refinerycms', '~> 2.0.0'
+#gem 'refinerycms-i18n', '~> 2.0.0'
+#gem 'refinerycms-news', git: 'git://github.com/26am/refinerycms-news.git', branch: '2-0-stable'
+gem 'refinerycms', git: 'git://github.com/resolve/refinerycms.git'
+gem 'refinerycms-i18n', git: 'git://github.com/parndt/refinerycms-i18n.git'
+gem 'refinerycms-news', git: 'git://github.com/resolve/refinerycms-news.git'
+gem 'refinerycms-settings', git: 'git://github.com/parndt/refinerycms-settings.git'
 
 # Gems used only for assets and not required
 # in production environments by default.
