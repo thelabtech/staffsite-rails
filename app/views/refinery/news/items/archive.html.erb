@@ -10,7 +10,7 @@
 
 
 <div id="page_interior">
-<% content_for :body_content_left do %>
+<% content_for :body do %>
   <% if @items.any? %>
     <section id="news_items">
       <%= render :partial => "/refinery/news/shared/item", :collection => @items %>
