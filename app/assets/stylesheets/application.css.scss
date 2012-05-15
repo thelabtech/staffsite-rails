@@ -467,25 +467,25 @@ ul.notifications,
 ul.teams {
   color: $white;
   font-size: 11px;
-  li {margin-bottom: 8px;}
+  li {margin-bottom: 4px;}
   a {
     display: inline-block;
     text-decoration: none;
-    .num {
-      background: $orange;
+    .type {
+      background: $blue;
       border-radius: 5px;
-      font-weight: bold;
+      font-weight: normal;
       font-size: 11px;
-      padding: 0px;
+      padding: 0px 4px;
+      line-height: 1.45em;
       text-align: center;
-      width: 18px;
       display: inline-block;
       margin-right: 4px;
       color: $white;
     }
 
   }
-  a:hover > .num {
+  a:hover > .type {
     background: $orange;
   }
 }
