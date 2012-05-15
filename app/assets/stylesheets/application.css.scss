@@ -209,6 +209,7 @@ a {color: #3099bc;}
       height: 66px;
     }
   }
+  a {text-decoration: none;}
 }
 
 .btn, .smallbtn {
@@ -240,6 +241,8 @@ a {color: #3099bc;}
 .btn.readmore {
   background-color: $orange;
 }
+
+.rbreak {margin-top: 8px;}
 
 #page {
   background: url("/images/bg.png") repeat-x;

@@ -13,7 +13,7 @@
       <% end %>
     </div>
     <div class="story">
-      <h2><%= news_item.title %></h2>
+      <h2><%= link_to(news_item.title, refinery.news_item_path(news_item)) %></h2>
       <div class="meta">Published on <%= news_item.publish_date.to_date.to_formatted_s(:long) %></div>
       <div class="content">
         <%= truncate  Sanitize.clean(news_item.body), :length => 500,
@@ -37,7 +37,7 @@
           </div>
           <div class="story">
             <header>
-              <h3><%= news_item.title %></h3>
+              <h3><%= link_to(news_item.title, refinery.news_item_path(news_item)) %></h3>
               <div class="meta">Published on <%= news_item.publish_date.to_date.to_formatted_s(:long) %></div>
             </header>
             <div class="content">
