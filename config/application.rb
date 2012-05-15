@@ -60,5 +60,6 @@ module Staffsite
     #config.rubycas.cas_base_url = "https://signin.ccci.org/cas"
     #config.rubycas.validate_url = "https://signin.ccci.org/cas/serviceValidate"
     config.assets.precompile += [/(?:\/|\\|\A).*\.css/]
+    config.assets.paths << "#{Rails.root}/app/assets/fonts"
   end
 end
