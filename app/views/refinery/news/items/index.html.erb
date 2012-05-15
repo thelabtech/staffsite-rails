@@ -2,7 +2,7 @@
   Stories<span class="smaller">&nbsp;</span>
 </div>
 <div id="page_interior">
-  <% content_for :body_content_left do %>
+  <% content_for :body do %>
     <%=raw @page.content_for(Refinery::Pages.default_parts.first.to_sym) unless params[:page] %>
 
     <% if @items.any? %>

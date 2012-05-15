@@ -4,7 +4,7 @@
 
 <div id="page_interior">
 <% content_for :body_content_title, @item.title %>
-<% content_for :body_content_left do %>
+<% content_for :body do %>
   <article class="news_item">
     <h2><%= @item.title %></h2>
     <p class="news_date"><%= t('.published') %> <%= l(@item.publish_date, :format => :long) %></p>
