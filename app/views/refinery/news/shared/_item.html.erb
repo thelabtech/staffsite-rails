@@ -13,7 +13,7 @@
     <% else %>
       <%= item.body.html_safe %>
     <% end %>
-    <%= link_to t('read_more', :scope => 'refinery.news.shared.items'), refinery.news_item_path(item) if news_item_teaser_enabled? %>
+    <%= link_to "Read More", refinery.news_item_path(item) if news_item_teaser_enabled? %>
   </section>
 
 </article>
