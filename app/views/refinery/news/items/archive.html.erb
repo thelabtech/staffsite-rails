@@ -2,7 +2,7 @@
   Archives
   <span class="smaller">
     <% content_for :title, "#{t('.news_item_archive_for', :date => @archive_date.strftime('%B %Y'))}" %>
-    <%= t('.news_item_archive_for', :date => @archive_date.strftime('%B %Y')) %>
+    <%= @archive_date.strftime('%B %Y') %>
   </span>
 </div>
 
