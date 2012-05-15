@@ -2,11 +2,17 @@
   <header>
     <h2><%= link_to item.title, refinery.news_item_path(item) %></h2>
     <section class='details'>
-      <time datetime="<%=l item.publish_date.to_date, :format => :default %>" class='posted_at'>
-        <%= t('created_at', :scope => 'refinery.news.shared.items', :when => l(item.publish_date.to_date, :format => :short)) %>
-      </time>
+      <p class="news_date">Published <%= l(item.publish_date, :format => :long) %>
+    <% if item.source.present? %>
+      <br />
+          <small>by <%= item.source %></small>
+        <% end %>
+      </p>
+
     </section>
-  </header>
+    </header>
+    <%= render 'refinery/news/shared/big_image', item: item %>
+
   <section class='clearfix'>
     <% if news_item_teaser_enabled? %>
       <%= news_item_teaser(item) %>

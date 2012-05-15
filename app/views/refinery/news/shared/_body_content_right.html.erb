@@ -1,0 +1,20 @@
+<% content_for :side_body do %>
+  <%= yield(:body_content_right_prepend) %>
+  <nav id="recent_news_items">
+    <h2>Recent Posts</h2>
+    <ul class="nostyle recentposts">
+      <% @items.each do |item| %>
+        <% next if item == @item %>
+        <li>
+          <h3><%= link_to item.title, refinery.news_item_path(item) %></h3>
+          <div class="excerpt">
+            <%= truncate(Sanitize.clean(item.body), length: 300) %>
+         </div>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
+  <%= news_item_archive_widget %>
+  <%= yield(:body_content_right_append) %>
+<% end %>
+
