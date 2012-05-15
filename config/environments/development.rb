@@ -37,6 +37,8 @@ Staffsite::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+  config.assets.prefix = "/dev-assets"
+
   ENV['S3_KEY']='0MZHF18QSJRVZT04JXR2'
   ENV['S3_SECRET']='oo0rEg6qtdh/v2+gHytdwZTCzT5RsNFxC7IkBDhN'
   ENV['S3_BUCKET']='staff.int.campuscrusadeforchrist.com'
