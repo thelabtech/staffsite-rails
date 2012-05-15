@@ -303,7 +303,7 @@ ul.cats {
   #body_content_title {
     display: none;
   }
-  #body_content_right {
+  #side_body {
     width: 285px;
     float: right;
     h2 {
@@ -321,7 +321,7 @@ ul.cats {
       padding-top: 47px;
     }
   }
-  #body_content_left {
+  #body {
     width: 675px;
     overflow: hidden;
     float: left;
@@ -574,3 +574,18 @@ footer {
   .help {background: image-url("help.png") no-repeat 0 50%; padding-left: 25px; font-size: 12px; font-weight: bold;}
 }
 
+.clearfix, section {
+  display: inline-block;
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+/* Hide from IE Mac \*/
+.clearfix, section {
+  display:block;
+}
