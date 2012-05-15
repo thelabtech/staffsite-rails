@@ -14,7 +14,9 @@ Staffsite::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
+  if config.respond_to?(:action_mailer)
+    config.action_mailer.raise_delivery_errors = false
+  end
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
@@ -34,6 +36,8 @@ Staffsite::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.assets.prefix = "/dev-assets"
 
   ENV['S3_KEY']='0MZHF18QSJRVZT04JXR2'
   ENV['S3_SECRET']='oo0rEg6qtdh/v2+gHytdwZTCzT5RsNFxC7IkBDhN'
