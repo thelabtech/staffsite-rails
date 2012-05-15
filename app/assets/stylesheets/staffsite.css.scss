@@ -48,7 +48,7 @@ a {color: #3099bc;}
   margin-top: 20px;
   margin-left: 28px;
   a {
-    background: url("/images/logo.png") no-repeat;
+    background: image-url("logo.png") no-repeat;
     width: 88px;
     height: 56px;
     overflow: hidden;
@@ -187,7 +187,7 @@ a {color: #3099bc;}
       display: block;
       text-decoration: none;
       padding: 0 10px;
-      background: url("/images/arrow.png") no-repeat 99% -32px;
+      background: image-url("arrow.png") no-repeat 99% -32px;
     }
   }
   .image {
@@ -241,13 +241,13 @@ a {color: #3099bc;}
 .rbreak {margin-top: 8px;}
 
 #page {
-  background: url("/images/bg.png") repeat-x;
+  background: image-url("bg.png") repeat-x;
   min-height: 912px;
   overflow: hidden;
 }
 
 .items #page {
-  background-image: url("/images/bg_stories.jpg");
+  background-image: image-url("bg_stories.jpg");
   background-color: #cfcfcf;
 }
 
@@ -298,7 +298,7 @@ ul.cats {
     width: $pagewidth;
     float: none;
     padding: 0px;
-    background: url("/images/sidebar.jpg") repeat-y 100%;
+    background: image-url("sidebar.jpg") repeat-y 100%;
   }
   #body_content_title {
     display: none;
@@ -307,7 +307,7 @@ ul.cats {
     width: 285px;
     float: right;
     h2 {
-      background: url("/images/blue.jpg") repeat-y;
+      background: image-url("blue.jpg") repeat-y;
       color: $white;
       font-size: 18px;
       line-height: 2em;
