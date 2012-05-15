@@ -24,4 +24,17 @@ class ApplicationController < ActionController::Base
     @current_person ||= current_user.try(:person)
   end
   helper_method :current_person
+
+  def after_sign_out_path_for(*)
+    session[:user_id] = nil
+    session[:cas_sent_to_gateway] = nil
+    session[:cas_validation_retry_count] = nil
+    session[:previous_redirect_to_cas] = nil
+    session[:cas_user] = nil
+    session[:casfilteruser] = nil
+    session[:cas_last_valid_ticket] = nil
+    session[:cas_last_valid_ticket_service] = nil
+
+    'https://signin.relaysso.org/cas/logout'
+  end
 end
