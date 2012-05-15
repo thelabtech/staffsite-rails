@@ -1,7 +1,16 @@
-<% content_for :title, "#{t('.news_item_archive_for', :date => @archive_date.strftime('%B %Y'))}" %>
+<div id="welcome">
+  Archives
+  <span class="smaller">
+    <% content_for :title, "#{t('.news_item_archive_for', :date => @archive_date.strftime('%B %Y'))}" %>
+    <%= t('.news_item_archive_for', :date => @archive_date.strftime('%B %Y')) %>
+  </span>
+</div>
 
+
+
+
+<div id="page_interior">
 <% content_for :body_content_left do %>
-  <h1><%= t('.news_item_archive_for', :date => @archive_date.strftime('%B %Y')) %></h1>
   <% if @items.any? %>
     <section id="news_items">
       <%= render :partial => "/refinery/news/shared/item", :collection => @items %>
@@ -15,3 +24,5 @@
 
 <%= render :partial => "/refinery/content_page" %>
 <% content_for :stylesheets, stylesheet_link_tag('refinery/news/frontend') %>
+
+</div>
