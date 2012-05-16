@@ -494,8 +494,12 @@ ul.linkset {
   list-style: none;
   margin: 10px 0 15px;
   padding: 0;
+  font-size: 11px;
   a {
     text-decoration: none;
+  }
+  a:hover {
+    color: $blue;
   }
   li.title {
     color: #fff;
@@ -503,6 +507,7 @@ ul.linkset {
     font-weight: bold;
     margin-bottom: 5px;
   }
+  li ul {padding-left: 1em;}
 }
 
 div.tabgroup {
@@ -539,8 +544,16 @@ div.col50 {
   
 }
 
-div.col50:last-child {
+div.col50:last-child,
+div.col32:last-child {
   padding-left: 0;
+}
+
+div.col32 {
+  float: left;
+  width: 300px;
+  margin: 10px 0;
+  padding: 0 0 0 30px;
 }
 
 .exp {
