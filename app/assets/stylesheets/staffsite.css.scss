@@ -387,6 +387,13 @@ ul.cats {
   }
 }
 
+#tools {
+  .title {font-size: 13px; display: block;}
+  .title span {display: block; font-weight: bold;}
+  p {color: #999; margin: 0;}
+  li.withdesc {margin-bottom: 1.5em;}
+}
+
 .bottom {
   width: 100%;
   padding: 20px 5px;
@@ -507,7 +514,7 @@ ul.linkset {
     font-weight: bold;
     margin-bottom: 5px;
   }
-  li ul {padding-left: 1em;}
+  li ul {padding-left: 1em; list-style: none;}
 }
 
 div.tabgroup {
@@ -538,7 +545,7 @@ div.tabbers {
 
 div.col50 {
   float: left;
-  width: 460px;
+  width: 450px;
   margin: 10px 0;
   padding: 0 0 0 30px;
   

@@ -124,15 +124,117 @@
             </ul>
           </div>
         </div>
+        
+        
         <div class="clr"></div>
 
+      </div>
+
+      <div class="exp" id="tools" style="display: none;">
+        <div class="alllinks">
+          <div class="col50">
+            <ul class="linkset">
+              <li class="title">Hand Tools</li>
+              <li class="link withdesc"> 
+                <a href="https://infobase.uscm.org/" title="infobase" class="title">
+                  <%= image_tag("logo_infobase.png") %>
+                  <span>Infobase</span>
+                </a>
+                <p>Information on all campuses involved with the Campus Ministry. Also enter stats and generate reports.</p>
+              </li>
+              <li class="link withdesc"> 
+                <a href="http://www.fsicatalog.com/FSK" title="infobase" class="title">
+                  <%= image_tag("logo_fsk.gif") %>
+                  <span>FSK Ordering Tool</span>
+                </a>
+                <p>Ordering Freshman Survival Kits for 2011-2012. Use access code "fsk+2011".</p>
+              </li>
+              <li class="link withdesc"> 
+                <a href="http://quest.campuscrusadeforchrist.com/" title="infobase" class="title">
+                  <%= image_tag("logo_quest.gif") %>
+                  <span>Quest Survey Tool</span>
+                </a>
+                <p>View and Enter QuEST survey results into the QuEST Database.</p>
+              </li>
+              <li class="link withdesc"> 
+                <a href="http://stint.uscm.org/admin" title="infobase" class="title">
+                  <%= image_tag("logo_stintintern.gif") %>
+                  <span>Stint / Internship Tool</span>
+                </a>
+                <p>View and manage online applications for STINTS or Internships.</p>
+              </li>
+            </ul>
+          </div>
+          
+          	 
+	 
+	 
+	 
+
+	
+
+          
+          
+          <div class="col50">
+            <ul class="linkset">
+              <li class="title">Personal Tools</li>
+              <li class="link withdesc">
+                <a href="" class="title">Personal Reimbursement</a>
+                <p>Online personal reimbursements.</p>
+              </li>
+              <li class="link withdesc">
+                <a href="" class="title">Reimbursement Advance</a>
+                <p>Online reimbursement advances.</p>
+              </li>
+              <li class="link withdesc">
+                <a href="" class="title">Additional Salary Request</a>
+                <p>Online additional salary requests.</p>
+              </li>
+              <li class="link withdesc">
+                <a href="" class="title">Salary Calculation</a>
+                <p>Online salary calculations.</p>
+              </li>
+              <li class="link withdesc">
+                <a href="" class="title">Forms	 </a>
+                <p>Downloadable personal and ministry forms.</p>
+              </li>
+              <li class="link withdesc">
+                <a href="" class="title">Customize</a>
+                <p>Customize home page items</p>
+              </li>
+              <li class="link withdesc">
+                <a href="" class="title">Financial Policy Manual</a>
+              </li>
+            </ul>
+          </div>
+          <div class="clr"></div>
+          
+          
+        </div>
+        
       </div>
 
 
 
       <div class="tabbers">
-        <a href="#" onclick="$('#logos').show();$('#links').hide();$(this).addClass('active');$(this).next().removeClass('active');return false" class="tab active">Tools</a>
-        <a href="#" onclick="$('#logos').hide();$('#links').show();$(this).addClass('active');$(this).prev().removeClass('active');return false" class="tab">Links</a>
+        <a href="#" onclick="$('#logos').show();
+                            $('#links').hide();
+                            $('#tools').hide();
+                            $('.tabbers a.tab').removeClass('active');
+                            $(this).addClass('active');
+                            return false" class="tab active">Popular</a>
+        <a href="#" onclick="$('#logos').hide();
+                            $('#links').show();
+                            $('#tools').hide();
+                            $('.tabbers a.tab').removeClass('active');
+                            $(this).addClass('active');
+                            return false" class="tab">Links</a>
+        <a href="#" onclick="$('#logos').hide();
+                            $('#links').hide();
+                            $('#tools').show();
+                            $('.tabbers a.tab').removeClass('active');
+                            $(this).addClass('active');
+                            return false" class="tab">Tools</a>
       </div>
 
 
