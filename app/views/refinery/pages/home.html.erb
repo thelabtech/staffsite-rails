@@ -132,6 +132,44 @@
 
       <div class="exp" id="tools" style="display: none;">
         <div class="alllinks">
+          
+          <div class="col50">
+            <ul class="linkset">
+              <li class="title">Power Tools</li>
+              <li class="link withdesc"> 
+                <a href="https://infobase.uscm.org/" title="infobase" class="title">
+                  <%= image_tag("logo_missionhub.png") %>
+                  <span>MissionHub</span>
+                </a>
+                <p>MissionHub: An online follow-up system with your audience in mind.</p>
+              </li>
+              <li class="link withdesc"> 
+                <a href="http://www.fsicatalog.com/FSK" title="infobase" class="title">
+                  <%= image_tag("logo_panorama.png") %>
+                  <span>Panorama</span>
+                </a>
+                <p>We've all heard of 360 reviews, the tool that helps to make each staff member more effective personally and in ministry. Come experience the adventure within Panorama!
+View pre-2011 reviews in the old 360 tool</p>
+              </li>
+              
+              <li class="link withdesc"> 
+                <a href="http://stint.uscm.org/admin" title="infobase" class="title">
+                  <%= image_tag("logo-crt.png") %>
+                  <span>Conference Registration Tool</span>
+                </a>
+                <p>Create, administer, and register online for an event of any size.</p>
+              </li>
+              <li class="link withdesc"> 
+                <a href="http://stint.uscm.org/admin" title="infobase" class="title">
+                  <%= image_tag("logo_sp.png") %>
+                  <span>Summer Projects</span>
+                </a>
+                <p>View and manage online applications for WSN and US Summer Projects, with the ability to automatically generate new account numbers for accepted students, track their balances, evaluate applications, etc.</p>
+              </li>
+            </ul>
+          </div>
+          
+          
           <div class="col50">
             <ul class="linkset">
               <li class="title">Hand Tools</li>
@@ -149,13 +187,7 @@
                 </a>
                 <p>Ordering Freshman Survival Kits for 2011-2012. Use access code "fsk+2011".</p>
               </li>
-              <li class="link withdesc"> 
-                <a href="http://quest.campuscrusadeforchrist.com/" title="infobase" class="title">
-                  <%= image_tag("logo_quest.gif") %>
-                  <span>Quest Survey Tool</span>
-                </a>
-                <p>View and Enter QuEST survey results into the QuEST Database.</p>
-              </li>
+              
               <li class="link withdesc"> 
                 <a href="http://stint.uscm.org/admin" title="infobase" class="title">
                   <%= image_tag("logo_stintintern.gif") %>
@@ -175,38 +207,7 @@
 
           
           
-          <div class="col50">
-            <ul class="linkset">
-              <li class="title">Personal Tools</li>
-              <li class="link withdesc">
-                <a href="" class="title">Personal Reimbursement</a>
-                <p>Online personal reimbursements.</p>
-              </li>
-              <li class="link withdesc">
-                <a href="" class="title">Reimbursement Advance</a>
-                <p>Online reimbursement advances.</p>
-              </li>
-              <li class="link withdesc">
-                <a href="" class="title">Additional Salary Request</a>
-                <p>Online additional salary requests.</p>
-              </li>
-              <li class="link withdesc">
-                <a href="" class="title">Salary Calculation</a>
-                <p>Online salary calculations.</p>
-              </li>
-              <li class="link withdesc">
-                <a href="" class="title">Forms	 </a>
-                <p>Downloadable personal and ministry forms.</p>
-              </li>
-              <li class="link withdesc">
-                <a href="" class="title">Customize</a>
-                <p>Customize home page items</p>
-              </li>
-              <li class="link withdesc">
-                <a href="" class="title">Financial Policy Manual</a>
-              </li>
-            </ul>
-          </div>
+          
           <div class="clr"></div>
           
           
@@ -222,19 +223,20 @@
                             $('#tools').hide();
                             $('.tabbers a.tab').removeClass('active');
                             $(this).addClass('active');
-                            return false" class="tab active">Popular</a>
-        <a href="#" onclick="$('#logos').hide();
-                            $('#links').show();
-                            $('#tools').hide();
-                            $('.tabbers a.tab').removeClass('active');
-                            $(this).addClass('active');
-                            return false" class="tab">Links</a>
+                            return false" class="tab active">Featured</a>
         <a href="#" onclick="$('#logos').hide();
                             $('#links').hide();
                             $('#tools').show();
                             $('.tabbers a.tab').removeClass('active');
                             $(this).addClass('active');
                             return false" class="tab">Tools</a>
+        <a href="#" onclick="$('#logos').hide();
+                            $('#links').show();
+                            $('#tools').hide();
+                            $('.tabbers a.tab').removeClass('active');
+                            $(this).addClass('active');
+                            return false" class="tab">Links</a>
+
       </div>
 
 
@@ -255,6 +257,21 @@
               -->
               <li>You don't have any notifications right now</li>
             </ul>
+            
+            
+            <h3 class="bal">Account</h3>
+            <ul class="bal listclean">
+              <li><strong>Balance:</strong> <span id="hideable">$25,000.00</span> <a href="" id="hideit" class="smallbtn">Hide</a></li>
+            </ul>
+            
+            <script>
+              $('#hideit').click(function() {
+                  $('#hideable').toggle();
+                  $(this).toggleClass('hidden');
+                  $(this).text($(this).text() == 'Show' ? 'Hide' : 'Show'); // <- HERE
+                  return false;
+              });
+            </script>
           </td>
 
           <td>
