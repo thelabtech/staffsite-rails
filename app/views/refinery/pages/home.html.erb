@@ -258,20 +258,21 @@ View pre-2011 reviews in the old 360 tool</p>
               <li>You don't have any notifications right now</li>
             </ul>
             
-            
-            <h3 class="bal">Account</h3>
-            <ul class="bal listclean">
-              <li><strong>Balance:</strong> <span id="hideable">$25,000.00</span> <a href="" id="hideit" class="smallbtn">Hide</a></li>
-            </ul>
-            
-            <script>
-              $('#hideit').click(function() {
-                  $('#hideable').toggle();
-                  $(this).toggleClass('hidden');
-                  $(this).text($(this).text() == 'Show' ? 'Hide' : 'Show'); // <- HERE
-                  return false;
-              });
-            </script>
+            <% if current_person.account_balance.to_i > 0 %>
+              <h3 class="bal">Account</h3>
+              <ul class="bal listclean">
+                <li><strong>Balance:</strong> <span id="hideable" style="display:none"><%= number_to_currency(current_person.account_balance, precision: 0) %> </span> <a href="" id="hideit" class="hidden smallbtn">Show</a></li>
+              </ul>
+              
+              <script>
+                $('#hideit').click(function() {
+                    $('#hideable').toggle();
+                    $(this).toggleClass('hidden');
+                    $(this).text($(this).text() == 'Show' ? 'Hide' : 'Show');
+                    return false;
+                });
+              </script>
+            <% end %>
           </td>
 
           <td>
