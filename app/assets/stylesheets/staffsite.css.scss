@@ -120,7 +120,7 @@ a {color: #3099bc;}
   padding-top: 25px;
   color: $white;
   text-indent: 28px;
-  text-shadow: rgba(36,142,166,.69) 0 2px 2px;
+  text-shadow: rgba(0, 0, 0, 0.45) 0 2px 2px;
   .smaller {
     font-size: 30px;
   }
@@ -241,7 +241,8 @@ a {color: #3099bc;}
 .rbreak {margin-top: 8px;}
 
 #page {
-  background: image-url("bg.png") repeat-x;
+  background: image-url("bg_stories.jpg") repeat-x;
+  background-color: #cfcfcf;
   min-height: 912px;
   overflow: hidden;
 }
@@ -388,10 +389,10 @@ ul.cats {
 }
 
 #tools {
-  .title {font-size: 13px; display: block;}
-  .title span {display: block; font-weight: bold;}
+  .title {font-size: 13px; display: block; margin-bottom: 5px;}
+  .title span {display: none; font-weight: bold;}
   p {color: #999; margin: 0;}
-  li.withdesc {margin-bottom: 1.5em;}
+  li.withdesc {margin-bottom: 2em;}
 }
 
 .bottom {
@@ -466,7 +467,12 @@ ul.cats {
   }
 }
 
+
+
+h3.bal {margin-top: 15px; margin-bottom: 5px;}
+
 ul.notifications,
+ul.bal,
 ul.teams {
   color: $white;
   font-size: 11px;
@@ -491,6 +497,10 @@ ul.teams {
   a:hover > .type {
     background: $orange;
   }
+}
+
+ul.bal {
+  li {font-size: 14px; color: #999;}
 }
 
 ul.teams {
