@@ -6,9 +6,9 @@
         <%= link_to(image_tag(news_item.image.url), refinery.news_item_path(news_item))  %>
       <% else %>
         <video id="<%= dom_id(news_item) %>_video" class="video-js vjs-default-skin" controls
-          preload="auto" width="440" height="320" poster="<%= news_item.video_poster_frame %>"
+          preload="auto" width="440" height="320" poster="<%= news_item.video_poster_frame.sub('http:','https:') %>"
           data-setup="{}">
-          <source src="<%= news_item.video_url %>" type='video/mp4'>
+          <source src="<%= news_item.video_url.sub('http:','https:') %>" type='video/mp4'>
         </video>
       <% end %>
     </div>
@@ -32,7 +32,7 @@
             <% if news_item.image %>
               <%= link_to(image_tag(news_item.image.url), refinery.news_item_path(news_item))  %>
             <% else %>
-              <%= link_to(image_tag(news_item.video_poster_frame), refinery.news_item_path(news_item))  %>
+              <%= link_to(image_tag(news_item.video_poster_frame.sub('http:','https:')), refinery.news_item_path(news_item))  %>
             <% end %>
           </div>
           <div class="story">

@@ -3,9 +3,9 @@
     <%= link_to(image_tag(item.image.image.thumb('600x').url), refinery.news_item_path(item))  %>
   <% else %>
     <video id="<%= dom_id(item) %>_video" class="video-js vjs-default-skin" controls
-      preload="auto" width="600" height="436" poster="<%= item.video_poster_frame %>"
+      preload="auto" width="600" height="436" poster="<%= item.video_poster_frame.sub('http:','https:') %>"
       data-setup="{}">
-      <source src="<%= item.video_url %>" type='video/mp4'>
+      <source src="<%= item.video_url.sub('http:','https:') %>" type='video/mp4'>
     </video>
   <% end %>
 </div>
