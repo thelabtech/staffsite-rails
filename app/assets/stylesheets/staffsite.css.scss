@@ -355,8 +355,16 @@ ul.cats {
     .article_content {
       margin-top: 30px;
     }
+    .video-js {
+      line-height: 436px;;
+    }
+    .vjs-poster {
+      vertical-align: middle;
+    }
   }
 }
+
+
 
 @mixin inner {
   min-height: 200px;
