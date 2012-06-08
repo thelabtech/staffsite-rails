@@ -262,7 +262,7 @@ View pre-2011 reviews in the old 360 tool</p>
               <li>You don't have any notifications right now</li>
             </ul>
             
-            <% if current_person.balance_daily > 0 %>
+            <% if current_person.balance_daily.to_f > 0 %>
               <h3 class="bal">Account</h3>
               <ul class="bal listclean">
                 <li><strong>Balance:</strong> <span id="hideable" style="display:none"><%= number_to_currency(current_person.balance_daily, precision: 0) %> </span> <a href="" id="hideit" class="hidden smallbtn">Show</a></li>
