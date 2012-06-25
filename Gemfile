@@ -32,6 +32,7 @@ gem 'jquery-rails'
 gem 'sanitize'
 gem 'rubycas-client', '2.3.8'
 gem 'fog'
+gem 'airbrake'
 #gem 'rubycas-client-rails'
 
 # To use ActiveModel has_secure_password
