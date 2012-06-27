@@ -1,5 +1,8 @@
 <div id="welcome">
-  Hi <%= current_person.first_name %>!<span class="smaller">&nbsp;Check this out...</span>
+  <% if current_person %>
+    Hi <%= current_person.first_name %>!
+  <% end %>
+  <span class="smaller">&nbsp;Check this out...</span>
 </div>
 
 <%= render :partial => "/refinery/news/items/main_page_news" %>  
@@ -262,7 +265,7 @@ View pre-2011 reviews in the old 360 tool</p>
               <li>You don't have any notifications right now</li>
             </ul>
             
-            <% if current_person.balance_daily %>
+            <% if current_person && current_person.balance_daily %>
               <h3 class="bal">Account</h3>
               <ul class="bal listclean">
                 <li><strong>Balance:</strong> <span id="hideable" style="display:none"><%= number_to_currency(current_person.balance_daily, precision: 0) %> </span> <a href="" id="hideit" class="hidden smallbtn">Show</a></li>
@@ -283,7 +286,7 @@ View pre-2011 reviews in the old 360 tool</p>
             <h3>Missional Teams</h3>
 
             <ul class="teams listclean">
-              <% current_person.teams.each do |team| %>
+              <% current_person && current_person.teams.each do |team| %>
                 <li><%= link_to(team.name, "https://infobase.uscm.org/teams/#{team.id}", target: '_blank') %></li>
               <% end %>
               <li><%= link_to("https://infobase.uscm.org/teams", class: "smallbtn", target: '_blank') do %>Join a team<% end %></li>
