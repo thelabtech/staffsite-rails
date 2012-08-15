@@ -3,7 +3,7 @@
   <div id="hero">
     <div class="image">
       <% if news_item.image %>
-        <%= link_to(image_tag(news_item.image.url), refinery.news_item_path(news_item))  %>
+        <%= link_to(image_tag(news_item.image.thumbnail(:large).url), refinery.news_item_path(news_item))  %>
       <% else %>
         <video id="<%= dom_id(news_item) %>_video" class="video-js vjs-default-skin" controls
           preload="auto" width="440" height="320" poster="<%= news_item.video_poster_frame.sub('http:','https:') %>"
@@ -30,8 +30,9 @@
         <article>
           <div class="image">
             <% if news_item.image %>
-              <%= link_to(image_tag(news_item.image.url), refinery.news_item_path(news_item))  %>
+              <%= link_to(image_tag(news_item.image.thumbnail(:medium).url), refinery.news_item_path(news_item))  %>
             <% else %>
+              <% if news_item.video_poster_frame
               <%= link_to(image_tag(news_item.video_poster_frame.sub('http:','https:')), refinery.news_item_path(news_item))  %>
             <% end %>
           </div>
