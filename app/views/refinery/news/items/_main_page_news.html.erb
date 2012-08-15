@@ -32,7 +32,6 @@
             <% if news_item.image %>
               <%= link_to(image_tag(news_item.image.thumbnail(:medium).url), refinery.news_item_path(news_item))  %>
             <% else %>
-              <% if news_item.video_poster_frame
               <%= link_to(image_tag(news_item.video_poster_frame.sub('http:','https:')), refinery.news_item_path(news_item))  %>
             <% end %>
           </div>
