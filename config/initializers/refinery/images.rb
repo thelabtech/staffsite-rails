@@ -13,7 +13,7 @@ Refinery::Images.configure do |config|
   # config.pages_per_admin_index = 20
 
   # Configure image sizes
-  # config.user_image_sizes = {:small=>"110x110>", :medium=>"225x255>", :large=>"450x450>"}
+   config.user_image_sizes = {:small=>"110x110>", :medium=>"245x", :large=>"440x338#"}
 
   # Configure image view options
   # config.image_views = [:grid, :list]
