@@ -13,7 +13,7 @@ module Refinery
     end
 
     def no_access
-      render text: "Sorry, you don't have access to this website. If you think you should, please send an email to help@campuscrusadeforchrist.com"
+      render text: "Sorry, you don't have access to this website. If you think you should, please send an email to help@cru.org"
     end
 
     # This action can be accessed normally, or as nested pages.
