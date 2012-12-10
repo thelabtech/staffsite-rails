@@ -28,7 +28,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'newrelic_rpm'
+gem 'newrelic_rpm', '>= 3.5.3.25'
 gem 'jquery-rails'
 gem 'sanitize'
 gem 'rubycas-client', '2.3.8'
