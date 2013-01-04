@@ -16,6 +16,8 @@ gem 'refinerycms-i18n', git: 'git://github.com/parndt/refinerycms-i18n.git'
 gem 'refinerycms-news', git: 'git://github.com/resolve/refinerycms-news.git'
 gem 'refinerycms-settings', git: 'git://github.com/parndt/refinerycms-settings.git'
 
+gem 'truncate_html', '0.5.5' # bug in new version 0.9
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
