@@ -15,6 +15,12 @@ module Refinery
         self[:video_url] = url
         image_file = nil
       end
+
+      def youtube_key
+        if video_url.to_s.include?('youtube')
+          video_url.match(/watch\?v=(\w+)/)[1]
+        end
+      end
       #=========== End Additions ===========
 
       translates :title, :body

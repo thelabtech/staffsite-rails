@@ -5,11 +5,15 @@
       <% if news_item.image %>
         <%= link_to(image_tag(news_item.image.thumbnail(:large).url), refinery.news_item_path(news_item))  %>
       <% else %>
-        <video id="<%= dom_id(news_item) %>_video" class="video-js vjs-default-skin" controls
-          preload="auto" width="440" height="320" poster="<%= news_item.video_poster_frame.sub('http:','https:') %>"
-          data-setup="{}">
-          <source src="<%= news_item.video_url.sub('http:','https:') %>" type='video/mp4'>
-        </video>
+        <% if news_item.youtube_key %>
+          <iframe width="440" height="320" src="https://www.youtube.com/embed/<%= news_item.youtube_key %>" frameborder="0" allowfullscreen></iframe>
+        <% else %>
+          <video id="<%= dom_id(news_item) %>_video" class="video-js vjs-default-skin" controls
+            preload="auto" width="440" height="320" poster="<%= news_item.video_poster_frame.sub('http:','https:') %>"
+            data-setup="{}">
+            <source src="<%= news_item.video_url.sub('http:','https:') %>" type='video/mp4'>
+          </video>
+        <% end %>
       <% end %>
     </div>
     <div class="story">
