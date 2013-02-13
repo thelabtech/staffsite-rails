@@ -7,6 +7,8 @@
       <% else %>
         <% if news_item.youtube_key %>
           <iframe width="440" height="320" src="https://www.youtube.com/embed/<%= news_item.youtube_key %>" frameborder="0" allowfullscreen></iframe>
+        <% elsif news_item.vimeo_key %>
+          <iframe src="http://player.vimeo.com/video/<%= news_item.vimeo_key %>" width="440" height="320" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
         <% else %>
           <video id="<%= dom_id(news_item) %>_video" class="video-js vjs-default-skin" controls
             preload="auto" width="440" height="320" poster="<%= news_item.video_poster_frame.sub('http:','https:') %>"
@@ -35,6 +37,8 @@
           <div class="image">
             <% if news_item.image %>
               <%= link_to(image_tag(news_item.image.thumbnail(:medium).url), refinery.news_item_path(news_item))  %>
+            <% elsif news_item.vimeo_key %>
+              <iframe src="http://player.vimeo.com/video/<%= news_item.vimeo_key %>" width="245" height="145" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
             <% else %>
               <%= link_to(image_tag(news_item.video_poster_frame.sub('http:','https:')), refinery.news_item_path(news_item))  %>
             <% end %>

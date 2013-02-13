@@ -4,6 +4,8 @@
   <% else %>
     <% if item.youtube_key %>
       <iframe width="600" height="436" src="https://www.youtube.com/embed/<%= item.youtube_key %>" frameborder="0" allowfullscreen></iframe>
+    <% elsif item.vimeo_key %>
+      <iframe src="http://player.vimeo.com/video/<%= item.vimeo_key %>" width="600" height="436" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
     <% else %>
       <video id="<%= dom_id(item) %>_video" class="video-js vjs-default-skin" controls
         preload="auto" width="600" height="436" poster="<%= item.video_poster_frame.sub('http:','https:') %>"

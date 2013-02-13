@@ -21,6 +21,12 @@ module Refinery
           video_url.match(/watch\?v=(\w+)/)[1]
         end
       end
+      
+      def vimeo_key
+        if video_url.to_s.include?('vimeo')
+          video_url.match(/vimeo\.com\/(\w+)/)[1]
+        end
+      end
       #=========== End Additions ===========
 
       translates :title, :body
